@@ -1,0 +1,205 @@
+.Contenedor_principal {
+	display: block;
+	position: relative;
+	 border: 2px solid #000;
+	 border-radius: 5px;
+	 width: 1000px;
+	 height: 1000px;
+
+ 
+}
+
+.tittle_bar{
+	border-bottom: 2px solid #000;
+	margin-bottom: 10px;
+	
+}
+
+.tittle_bar > h4 {
+margin-left: 10px;
+
+}
+
+
+.Contenedor_first{
+	display: flex;
+	position: relative;
+
+ border: 2px solid #000;
+ margin: auto;
+ width: 900px;
+ height: 500px;
+  margin-bottom: 50px;
+
+}
+
+.inter_first_left{
+	display: block;
+	position: relative;
+
+ height: 400px;
+ width: 250px;
+margin: 20px;
+padding: 10px;
+}
+
+
+.Contenedor_first .left {
+	display: inline-flex;
+	margin: 10px;
+	position: relative;
+
+	width: 200px;
+
+}
+
+.Text_area_right {
+	display: block;
+	position: relative;
+	
+
+ 
+ height: 300px;
+ width: 500px;
+ margin: auto;
+ margin-top: 70px;
+
+
+}
+
+.Text_area_right > textarea {
+
+	display: inline-flex;
+	position: relative;
+	margin: 10px;
+	height: 220px;
+	width: 450px;
+	overflow: scroll;
+
+
+
+}
+
+
+
+
+
+
+
+.contenedor_second{
+
+display: block;
+position: relative;
+
+
+   border: 2px solid #000;
+   height: 100px;
+   width: 950px;
+    margin: auto;
+    margin-bottom: 20px;
+     border-radius: 5px;
+}
+
+ .labelss {
+
+	display: flex;
+	position: absolute;
+	
+	width: 800px;
+	height: 50px;
+
+
+
+}
+
+.labelss > h5 {
+	margin-left: 85px;
+}
+
+.dv{
+	margin-top: 25px;
+	width: 30px;
+	margin-left: 10px;
+}
+
+.separate {
+	margin-left: 10px;
+}
+
+.contenedor_second > .inputs {
+	display: flex;
+	position: absolute;
+	
+	width: 800px;
+	height: 50px;
+	margin-top: 30px;
+	margin-left: 50px;
+
+
+}
+
+
+
+
+
+
+
+.contenedor_second  > .inputs {
+	display: block;
+
+	}
+
+
+
+
+
+.contenedor_three{
+ border: 20px solid #118;
+ border-radius: 5px;
+display: flex;
+position: relative;
+}
+
+
+
+
+.contenedor_three > input{
+ 
+
+margin: 10px;
+width: 100px;
+
+
+}
+
+.contenedor_second {
+
+	display: flex;
+	position: relative;
+
+
+
+
+}
+
+
+h3{
+	margin-left: 20px;
+}
+
+.Botonera {
+	display: block;
+	position: relative;
+
+margin-left: 320px;
+
+}
+
+.Botonera > button {
+	width: 100px;
+	margin-left: 50px;
+
+	
+
+
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Sistema de registro de demanda</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}" media="screen" >
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/Demandas.css' %}">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	
+	
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="about.html">Informes</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Demandas <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+
+							<li class="active"><a href="sidebar-left.html">Crear Demanda</a></li>
+
+							<li class="active"><a href="sidebar-left.html">Buscar Demandas</a></li>
+
+							<li class="active"><a href="sidebar-left.html">Eliminar Demanda</a></li>
+						
+						</ul>
+					</li>
+					<li><a href="contact.html">Segumiento de Casos</a></li>
+
+
+					<li><a class="btn" href="signin.html">Cerrar sesión</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+		
+		<ol class="breadcrumb">
+			<li><a href="index.html">Inicio</a></li>
+			<li class="active">Sistema de registro de demandas</li>
+			<li class="active">Modificar Demanda</li>
+			<li class="active">Elmiminar Demanda</li>
+
+		</ol>
+
+		<div class="row">
+			
+			<!-- Sidebar -->
+			<aside class="col-md-4 sidebar sidebar-left">
+
+				<div class="row widget">
+					<div class="col-xs-12">
+					
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						
+					
+					</div>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+			<!-- Article main content -->
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Sistema de registro de demandas.</h1>
+				</header>
+				<form method="POST">
+					{% csrf_token %}
+					<div class="Contenedor_principal">
+					<div class="tittle_bar"> 
+					<h4 > Crear nueva Demanda</h4>
+					
+					</div>
+					
+					
+					<div class="Contenedor_first">
+
+						<div class="inter_first_left"> 
+
+							<label>Datos de la Demanda</label>
+
+						<h5> id de la demanda </h5>
+						{{demanda.id_demanda}}
+						<h5> Fecha </h5>
+						{{demanda.fecha}}
+						<h5> author </h5>
+						{{demanda.author}}
+						<h5> Hora </h5>
+						{{demanda.hora}}
+						<h5> tipo de demanda </h5>
+						{{demanda.tipodemanda}}
+						
+
+					 </div>
+
+						<div class="Text_area_right"> 
+							<h4> Detalle de la Demanda : </h4>
+							{{demanda.detalle}}
+						</div>
+
+						</div>
+						
+
+
+
+						<h3> Demandado</h3>
+
+						<div class="contenedor_second">
+							<div class="labelss">
+
+								 <div>
+								 	<h5 class="separate" >Rut</h5>
+									 {{demanda.rut_demandado}}								 	
+								 	
+								 </div>
+								 
+								  <div> 
+								 	<h5> </h5>
+
+									 {{demanda.dv_demandado}}
+								</div>
+
+								 	<div> 
+								 <h5 class="separate" >Nombre</h5>
+								 {{demanda.nombre_demandado}}								 
+								 	</div>
+								   
+
+								 <div>
+								 	<h5 class="separate">Apellido</h5>
+									 {{demanda.apellido_demandado}}
+								 </div>
+
+								 <div>
+								 	<h5 class="separate">Telefono</h5>
+									 {{demanda.telefono_demandado}}								 </div>
+
+								
+							<div> 
+								<h5 class="separate">Comuna</h5>
+								{{demanda.comuna_demandado}}
+
+							</div>
+
+							
+							
+							
+							
+							 </div>
+
+
+
+
+
+							</div>
+
+
+							<h3> Demandante</h3>
+
+
+ 							<div class="contenedor_second">
+							<div class="labelss">
+
+								 <div>
+								 	<h5 class="separate" >Rut</h5>
+									 {{demanda.rut_demandante}}								 	
+								 	
+								 </div>
+								 <div> 
+								 	<h5> </h5>
+
+									 {{demanda.dv_demandante}}	
+								</div>
+
+								 	<div> 
+								 <h5 class="separate" >Nombre</h5>
+								 {{demanda.nombre_demandante}}									 
+								 	</div>
+								   
+
+								 <div>
+								 	<h5 class="separate">Apellido</h5>
+									 {{demanda.apellido_demandante}}	
+								 </div>
+
+								 <div>
+								 	<h5 class="separate">Telefono</h5>
+									 {{demanda.telefono_demandante}}									 </div>
+
+								 <div> 
+								<h5 class="separate">Comuna</h5>
+								{{demanda.comuna_demandante}}	
+
+							</div>
+							
+							
+							
+							 </div>
+
+
+
+
+
+							</div>
+
+
+							
+	
+						
+						
+
+
+				
+					</div>
+					<div class="Botonera"> 						
+						
+					</div>
+					<button type='submit'>Crear</button>
+				</form>
+
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contacto</h3>
+						<div class="widget-body">
+							<p>+56976233239<br>
+								<a href="mailto:#">legaltechchile@gmail.com</a><br>
+								<br>
+								Avenida Los Carrera 1234, Concepción
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Síguenos</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Text widget</h3>
+						<div class="widget-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="#">Inicio</a> | 
+								<a href="about.html">Acerca de</a> |
+								<a href="sidebar-right.html">Registro de demandas</a> |
+								<a href="contact.html">Contacto</a> |
+								<b><a href="signup.html">Iniciar sesión</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2022. 
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/headroom.min.js' %}"></script>
+	<script src="{% static 'js/jQuery.headroom.min.js' %}"></script>
+	<script src="{% static 'js/template.js' %}"></script>
+</body>
+</html>

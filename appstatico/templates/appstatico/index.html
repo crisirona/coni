@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %} 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Legaltech - Bufete de abogados</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}" media="screen" >
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+</head>
+
+<body class="home">
+
+    {% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  
+  <a href="{% url 'logout' %}">Cerrar Sesion</a>
+{% else %}
+  <p>No has iniciado sesion</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+		
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="#">Inicio</a></li>
+					<li><a href="about.html">Informes</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Demandas <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class="active"><a href="{% url 'sidebarleft' %}">Crear Demanda</a></li>
+
+							<li class="active"><a href="{% url 'busqueda' %}">Buscar Demandas</a></li>
+
+							<li class="active"><a href="{% url 'eliminardemanda' %}">Eliminar Demanda</a></li>
+							
+						</ul>
+					</li>
+					<li><a href="contact.html">Segumiento de Casos</a></li>
+					<li><a class="btn" href="signin.html">ACCEDER / REGISTRARSE</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">LEGALTECH, BUFETE DE ABOGADOS</h1>
+				
+				
+			</div>
+		</div>
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thin">COMPROMETIDOS CON LA VISIÓN DE LOS CLIENTES</h2>
+		<p class="text-muted">
+			Legaltech es el estudio de abogados más grande de Chile, con más de 270 profesionales en su área legal. 
+			<br> Los abogados de la firma están comprometidos con el negocio de sus clientes, sus problemas y desafíos.<br> 
+			
+		</p>
+	</div>
+	<!-- /Intro-->
+		
+	<!-- Highlights - jumbotron -->
+	<div class="jumbotron top-space">
+		<div class="container">
+			
+			<h3 class="text-center thin">Algunos de nuestros asuntos</h3>
+			
+			<div class="row">
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Derecho de familia</h4></div>
+					<div class="h-body text-center">
+						<p>Te ofrecemos una amplia gama de servicios destinados a dar una eficiente y eficaz solución a tus necesidades legales y de asesoramiento en diversas áreas del derecho como el derecho mercantil y societario, el derecho civil, el derecho aplicable a las nuevas tecnologías etc..</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Derecho laboral</h4></div>
+					<div class="h-body text-center">
+						<p>Te ofrecemos una amplia gama de servicios destinados a dar una eficiente y eficaz solución a tus necesidades legales y de asesoramiento en diversas áreas del derecho como el derecho mercantil y societario, el derecho civil, el derecho aplicable a las nuevas tecnologías etc.. </p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Derecho de aguas</h4></div>
+					<div class="h-body text-center">
+						<p>Te ofrecemos una amplia gama de servicios destinados a dar una eficiente y eficaz solución a tus necesidades legales y de asesoramiento en diversas áreas del derecho como el derecho mercantil y societario, el derecho civil, el derecho aplicable a las nuevas tecnologías etc..</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Derecho penal</h4></div>
+					<div class="h-body text-center">
+						<p>Te ofrecemos una amplia gama de servicios destinados a dar una eficiente y eficaz solución a tus necesidades legales y de asesoramiento en diversas áreas del derecho como el derecho mercantil y societario, el derecho civil, el derecho aplicable a las nuevas tecnologías etc.. </p>
+					</div>
+				</div>
+			</div> <!-- /row  -->
+		
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="text-center top-space">¿Por qué elegirnos como sus abogados?</h2>
+		<br>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Trabajamos con confianza y empatía</h3></h3>
+				<p>Nuestros abogados entienden que la relación para con nuestros clientes es de confianza. De manera tal, que nos enfocamos en construir relaciones humanas en las cuáles usted pueda depositar su problema en manos amigas que no lo prejuzguen ni lo hagan sentir incómodo. 
+			</div>
+			<div class="col-sm-6">
+				<h3>Somos abogados caracterizados por nuestra proactividad y comunicación real</h3>
+				<p> Nuestros abogados entienden que la relación para con nuestros clientes es de confianza. De manera tal, que nos enfocamos en construir relaciones humanas en las cuáles usted pueda depositar su problema en manos amigas que no lo prejuzguen ni lo hagan sentir incómodo.</p>
+			</div>
+		</div> <!-- /row -->
+
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Nuestros abogados tienen altos estándares éticos</h3>
+				<p>
+					Nuestros abogados entienden que la relación para con nuestros clientes es de confianza. De manera tal, que nos enfocamos en construir relaciones humanas en las cuáles usted pueda depositar su problema en manos amigas que no lo prejuzguen ni lo hagan sentir incómodo.the original template in your work. 
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<h3>Acerca de nuestros litigios y arbitrajes</h3>
+				<p>					Nuestros abogados entienden que la relación para con nuestros clientes es de confianza. De manera tal, que nos enfocamos en construir relaciones humanas en las cuáles usted pueda depositar su problema en manos amigas que no lo prejuzguen ni lo hagan sentir incómodo.the original template in your work. 
+				</p>
+			</div>
+		</div> <!-- /row -->
+
+		<div class="jumbotron top-space">
+			<h4>					Nuestros abogados entienden que la relación para con nuestros clientes es de confianza. De manera tal, que nos enfocamos en construir relaciones humanas en las cuáles usted pueda depositar su problema en manos amigas que no lo prejuzguen ni lo hagan sentir incómodo. 
+			</h4>
+     		<p class="text-right"><a class="btn btn-primary btn-large">Leer más »</a></p>
+  		</div>
+
+</div>	<!-- /container -->
+	
+	<!-- Social links. @TODO: replace by link/instructions in template -->
+	<section id="social">
+		<div class="container">
+			<div class="wrapper clearfix">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_button_linkedin_counter"></a>
+				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+				</div>
+				<!-- AddThis Button END -->
+			</div>
+		</div>
+	</section>
+	<!-- /social links -->
+
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contacto</h3>
+						<div class="widget-body">
+							<p>+56976233239
+						    <p>+56978956234
+								<br>
+							<a href="mailto:#">legaltechchile@gmail.com</a><br>
+								<br>
+								Avenida Los Carrera #456, Concepción.
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Síguenos</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Acerca de nosotros</h3>
+						<div class="widget-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="#">Inicio</a> | 
+								<a href="about.html">Acerca de</a> |
+								<a href="sidebar-right.html">Registro de demandas</a> |
+								<a href="contact.html">Contacto</a> |
+								<b><a href="signup.html">Acceder</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2022.
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="{% static 'js/headroom.min.js' %}"></script>
+	<script src="{% static 'js/jQuery.headroom.min.js' %}"></script>
+	<script src="{% static 'js/template.js' %}"></script>
+
+</body>
+</html>
