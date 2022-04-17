@@ -1,0 +1,70 @@
+
+
+{% extends 'appstatico/base.html' %}
+
+{% block content %}
+<div class="container">
+
+	
+	
+	<article class="col-xs-12 maincontent">
+        <header class="page-header">
+            <h1 class="page-title">Registrarse</h1>
+        </header>
+        
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="thin text-center">Registrar nueva cuenta</h3>
+                    <p class="text-center text-muted">Si ya posee una cuenta, solo debe <a href="{% url 'login' %}">Iniciar sesión</a> De lo contrario, debe registrarse. </p>
+                    <hr>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="top-margin">
+                            <label>Nombres</label>
+                            {{form.username}}
+                        </div>
+                        <div class="top-margin">
+                            <label>Apellidos</label>
+                            {{form.last_name}}
+                        </div>
+                        <div class="top-margin">
+                            <label>Email  <span class="text-danger">*</span></label>
+                            {{form.email}}
+                        </div>
+
+                        <div class="row top-margin">
+                            <div class="col-sm-6">
+                                <label>Contraseña <span class="text-danger">*</span></label>
+                                {{form.password1}}
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Confirmar contraseña <span class="text-danger">*</span></label>
+                                {{form.password2}}
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <label class="checkbox">
+                                    <input type="checkbox"> 
+                                    He leído los <a href="page_terms.html">Términos y condiciones</a>
+                                </label>                        
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <button class="btn btn-secondary" type="submit">Registrarse</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+    </article>
+	
+</div>
+{% endblock %}

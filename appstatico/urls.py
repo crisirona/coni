@@ -7,11 +7,11 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('left/',views.sidebarleft,name='sidebarleft'),
+    path('creardemanda/',views.crearDemanda,name='creardemanda'),
     path('right/',views.sidebarright, name='sidebarright'),
     path('signin/',views.signin,name='signin'),
     path('signup/',views.signup,name='signup'),
-    path('login/',LoginView.as_view(template_name='appstatico/signin.html'),name='login'),
+    path('login/',LoginView.as_view(template_name='appstatico/login.html'),name='login'),
     path("logout", LogoutView.as_view(), name="logout"),
     path('crud/',views.crud,name='crud'),
     path('eliminardemanda/',views.eliminardemanda,name='eliminardemanda'),

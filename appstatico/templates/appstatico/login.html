@@ -1,17 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %} 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">ir</button>
-    </form>
-</body>
-</html>
+
+
+{% extends 'appstatico/base.html' %}
+
+{% block content %}
+<div class="container">
+
+	<h2>Login</h2>
+	
+	<article class="col-xs-12 maincontent">
+        <header class="page-header">
+            <h1 class="page-title">Iniciar sesión</h1>
+        </header>
+        
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="thin text-center">Iniciar sesión</h3>
+                    <p class="text-center text-muted">Si no cuenta con un nombre de usuario debe, <a href="signup.html">Registrarse</a> para acceder al sistema web Legaltech. </p>
+                    <hr>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="top-margin">
+                            <label>Usuario/Email <span class="text-danger">*</span></label>
+                            {{form.username}}								</div>
+                        <div class="top-margin">
+                            <label>Contraseña <span class="text-danger" required>*</span></label>
+                            {{form.password}}
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <b><a href="">Olvidó su clave?</a></b>
+                            </div>
+                            <div class="col-lg-7 text-left">
+                                <button class="btn btn-secondary" type="submit">Iniciar sesión</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+    </article>
+	
+</div>
+{% endblock %}

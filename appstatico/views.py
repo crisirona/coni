@@ -8,7 +8,7 @@ from .models import Demanda
 def index(request):
     return render(request,'appstatico/index.html')
 
-def sidebarleft(request):
+def crearDemanda(request):
     
     if request.method == 'POST':
         demanda = DemandaForm(request.POST)
@@ -32,13 +32,13 @@ def sidebarleft(request):
         # 'demandado':demandado, 
         # 'demandante':demandante,
     }
-    return render(request,'appstatico/sidebar-left.html',contexto)
+    return render(request,'appstatico/creardemanda.html',contexto)
 
 def sidebarright(request):
     return render(request,'appstatico/sidebar-right.html')
 
 def signin(request):
-    return render(request,'appstatico/signin.html')
+    return render(request,'appstatico/login.html')
 def signup(request):
     # contexto={
     #     'registro':CustomUserCreationForm()
@@ -53,7 +53,7 @@ def signup(request):
     context = {  
         'form':form  
     }  
-    return render(request,'appstatico/signup.html',context)
+    return render(request,'appstatico/registro.html',context)
 
 def crud(request):
     demanda = Demanda.objects.all()
@@ -82,7 +82,7 @@ def editar(request,id):
         'demanda':demanda,
         'formulario':formulario
     }
-    return render(request,'appstatico/editar.html',contexto)
+    return render(request,'appstatico/modificar.html',contexto)
 
 def busqueda(request):
     busqueda = request.GET.get("buscar")
@@ -91,8 +91,10 @@ def busqueda(request):
         demanda = Demanda.objects.filter(
             Q(id_demanda__icontains= busqueda)
         ).distinct()
+        
     
     contexto={
-        'demanda':demanda
+        'demanda':demanda,
+        
     }
     return render(request,'appstatico/busqueda.html',contexto)

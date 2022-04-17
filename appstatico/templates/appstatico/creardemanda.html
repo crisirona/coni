@@ -1,0 +1,165 @@
+
+
+{% extends 'appstatico/base.html' %}
+
+{% block content %}
+<div class="container">
+
+	
+	
+	<form method="POST">
+        {% csrf_token %}
+        <div class="Contenedor_principal">
+        <div class="tittle_bar"> 
+        <h4 > Crear nueva Demanda</h4>
+        
+        </div>
+        
+        
+        <div class="Contenedor_first">
+
+            <div class="inter_first_left"> 
+
+                <label>Datos de la Demanda</label>
+
+            <h5> id de la demanda </h5>
+            {{demanda.id_demanda}}
+            <h5> Fecha </h5>
+            {{demanda.fecha}}
+            <h5> author </h5>
+            {{demanda.author}}
+            <h5> Hora </h5>
+            {{demanda.hora}}
+            <h5> tipo de demanda </h5>
+            {{demanda.tipodemanda}}
+            
+
+         </div>
+
+            <div class="Text_area_right"> 
+                <h4> Detalle de la Demanda : </h4>
+                {{demanda.detalle}}
+            </div>
+
+            </div>
+            
+
+
+
+            <h3> Demandado</h3>
+
+            <div class="contenedor_second">
+                <div class="labelss">
+
+                     <div>
+                         <h5 class="separate" >Rut</h5>
+                         {{demanda.rut_demandado}}								 	
+                         
+                     </div>
+                     
+                      <div> 
+                         <h5> </h5>
+
+                         {{demanda.dv_demandado}}
+                    </div>
+
+                         <div> 
+                     <h5 class="separate" >Nombre</h5>
+                     {{demanda.nombre_demandado}}								 
+                         </div>
+                       
+
+                     <div>
+                         <h5 class="separate">Apellido</h5>
+                         {{demanda.apellido_demandado}}
+                     </div>
+
+                     <div>
+                         <h5 class="separate">Telefono</h5>
+                         {{demanda.telefono_demandado}}								 </div>
+
+                    
+                <div> 
+                    <h5 class="separate">Comuna</h5>
+                    {{demanda.comuna_demandado}}
+
+                </div>
+
+                
+                
+                
+                
+                 </div>
+
+
+
+
+
+                </div>
+
+
+                <h3> Demandante</h3>
+
+
+                 <div class="contenedor_second">
+                <div class="labelss">
+
+                     <div>
+                         <h5 class="separate" >Rut</h5>
+                         {{demanda.rut_demandante}}								 	
+                         
+                     </div>
+                     <div> 
+                         <h5> </h5>
+
+                         {{demanda.dv_demandante}}	
+                    </div>
+
+                         <div> 
+                     <h5 class="separate" >Nombre</h5>
+                     {{demanda.nombre_demandante}}									 
+                         </div>
+                       
+
+                     <div>
+                         <h5 class="separate">Apellido</h5>
+                         {{demanda.apellido_demandante}}	
+                     </div>
+
+                     <div>
+                         <h5 class="separate">Telefono</h5>
+                         {{demanda.telefono_demandante}}									 </div>
+
+                     <div> 
+                    <h5 class="separate">Comuna</h5>
+                    {{demanda.comuna_demandante}}	
+
+                </div>
+                
+                
+                
+                 </div>
+
+
+
+
+
+                </div>
+
+
+                
+
+            
+            
+
+
+    
+        </div>
+        <div class="Botonera"> 						
+            
+        </div>
+        <button type='submit'>Crear</button>
+    </form>
+	
+</div>
+{% endblock %}
