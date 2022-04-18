@@ -25,14 +25,7 @@
 
 <body class="home">
 
-    {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  
-  <a href="{% url 'logout' %}">Cerrar Sesion</a>
-{% else %}
-  <p>No has iniciado sesion</p>
-  <a href="{% url 'login' %}">Log In</a>
-{% endif %}
+   
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">

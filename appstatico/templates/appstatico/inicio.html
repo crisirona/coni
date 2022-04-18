@@ -1,0 +1,21 @@
+
+
+{% extends 'appstatico/base.html' %}
+
+{% block content %}
+<div class="container">
+
+	<h2>Menu Principal</h2>
+	
+    {% if user.is_authenticated %}
+    Hola {{ user.username }}!
+    
+    <a href="{% url 'logout' %}">Cerrar Sesion</a>
+  {% else %}
+    <p>No has iniciado sesion</p>
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'signup' %}">Registro</a>
+  {% endif %}
+	
+</div>
+{% endblock %}

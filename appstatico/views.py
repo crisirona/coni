@@ -6,7 +6,7 @@ from .models import Demanda
 
 # Create your views here.
 def index(request):
-    return render(request,'appstatico/index.html')
+    return render(request,'appstatico/inicio.html')
 
 def crearDemanda(request):
     
@@ -16,6 +16,7 @@ def crearDemanda(request):
         # demandante = DemandanteForm(request.POST)
         
         if demanda.is_valid() :
+
           
             # demandado.demanda = Demanda.objects.last
             # demandado.demanda = Demanda.objects.last
