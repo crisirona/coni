@@ -8,7 +8,7 @@ class DemandaForm(forms.ModelForm):
 
     class Meta:
         model = Demanda
-        fields = ('id_demanda', 'author','fecha','hora','tipodemanda','detalle',
+        fields = ('id_demanda', 'fecha','hora','tipodemanda','detalle',
                     'rut_demandado', 'dv_demandado','nombre_demandado','apellido_demandado','telefono_demandado','comuna_demandado',
                     'rut_demandante', 'dv_demandante','nombre_demandante','apellido_demandante','telefono_demandante','comuna_demandante')
 

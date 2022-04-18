@@ -20,7 +20,9 @@ def crearDemanda(request):
           
             # demandado.demanda = Demanda.objects.last
             # demandado.demanda = Demanda.objects.last
-            demanda.save()
+            dem=demanda.save(commit=False)
+            dem.author= request.user
+            dem.save()
             # demandado.save()
             # demandante.save()
             return redirect('index')
@@ -36,7 +38,7 @@ def crearDemanda(request):
     return render(request,'appstatico/creardemanda.html',contexto)
 
 def sidebarright(request):
-    return render(request,'appstatico/sidebar-right.html')
+    return render(request,'appstatico/sidebar-left.html')
 
 def signin(request):
     return render(request,'appstatico/login.html')
