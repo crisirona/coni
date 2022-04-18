@@ -43,7 +43,6 @@ class Demanda(models.Model):
     hora = models.TimeField(default=timezone.now)
     tipodemanda = models.ForeignKey(TipoDemanda,null=True,blank=True,on_delete=models.CASCADE)
     detalle = models.TextField()
-    #caso = models.ForeignKey(Caso,on_delete=models.CASCADE)
     rut_demandado = models.IntegerField(null=True,blank=True)
     dv_demandado = models.IntegerField(null=True,blank=True)
     nombre_demandado = models.CharField(max_length=25,null=True,blank=True)

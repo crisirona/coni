@@ -4,8 +4,6 @@
 
 {% block content %}
 <div class="container">
-
-	<h2>Login</h2>
 	
 	<article class="col-xs-12 maincontent">
         <header class="page-header">
@@ -16,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3 class="thin text-center">Iniciar sesión</h3>
-                    <p class="text-center text-muted">Si no cuenta con un nombre de usuario debe, <a href="signup.html">Registrarse</a> para acceder al sistema web Legaltech. </p>
+                    <p class="text-center text-muted">Si no cuenta con un nombre de usuario debe, <a href="{% url 'signup' %}">Registrarse</a> para acceder al sistema web Legaltech. </p>
                     <hr>
                     
                     <form method="post">
