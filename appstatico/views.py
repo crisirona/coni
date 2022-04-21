@@ -60,8 +60,10 @@ def signup(request):
 
 def crud(request):
     demanda = Demanda.objects.all()
+
     contexto={
-        'demanda':demanda
+        'demanda':demanda,
+
     }
     return render(request,'appstatico/crud.html',contexto)
 
@@ -81,6 +83,13 @@ def eliminar(request,id):
 def editar(request,id):
     demanda = Demanda.objects.get(id=id)
     formulario = DemandaForm(request.POST or None, request.FILES or None, instance=demanda)
+    if request.method == "POST":
+        form = DemandaForm(request.POST or None, request.FILES or None, instance=demanda)
+        if form.is_valid():
+            form.save()
+            return redirect('crud')
+    else:
+        form = DemandaForm()
     contexto={
         'demanda':demanda,
         'formulario':formulario
